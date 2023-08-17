@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Irma SAC</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" th:href="@{/css/style.css}"/>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body>
+        <header>
+            <h2 class="logo">Plasticos Irma Grande S.A.C.</h2>
+            <input type="checkbox" id="check">
+                <label for="check" class="mostrar-menu">
+                    &#8801
+                </label>
+                <nav class="menu">
+                    <a th:href="@{/usuario/welcome}">Inicio</a>
+                    <a th:href="@{/public/productos}">Catalogo</a>
+                    <a th:href="@{/usuario/VerCompras}">Ver compras</a>
+                    <a th:href="@{/usuario/nuevoGuia}">Propuesta Producto</a>
+                    <a th:if="${carrito>0}" th:href="@{/VerCarrito}">Ver Carrito</a>
+                    <!--                        <a th:href="@{/cambiarContrasena}">Cambiar Contraseña</a>-->
+                    <a th:href="@{/logout}">Cerrar Sesion</a>
+                    <label for="check" class="esconder-menu">
+                        &#215
+                    </label>
+                </nav>
+        </header>
+        <label style="color:red" th:if="${errorStock!=null}" th:text="${errorStock}"></label>    
+        <section id="banner">
+            <div class="contenido-banner">
+                <h3><span>Plasticos Irma Grande S.A.C.</span><br>Fabricacion y comercialización de productos plásticos</h3>
+                <a href="#" class="boton-empezar">Ver Catalogo</a>
+            </div>
+        </section>
+        <section id="personas">
+            <div>
+                <img src="/imagenes/mision1.png" alt="">
+                    <h4>Mision</h4>
+                    <p> En nuestra tienda de ropa, nuestra misión es ofrecer a nuestros clientes una selección de prendas de vestir de alta calidad a precios asequibles. Nos esforzamos por ofrecer un servicio excepcional y ayudar a cada cliente a encontrar su estilo único. Creemos que la moda es una forma de expresión personal, y estamos comprometidos a brindar a nuestros clientes la oportunidad de expresarse con confianza.</p>
+            </div>
+            <div>
+                <img src="/imagenes/vision.png" alt="">
+                    <h4>Vision</h4>
+                    <p> Nuestra visión es ser la tienda de ropa líder en nuestra comunidad y en línea, reconocida por nuestro servicio excepcional y nuestra selección de prendas de vestir de alta calidad. Queremos ser conocidos como el destino de moda preferido para hombres y mujeres de todas las edades y tamaños, ofreciendo una experiencia de compra sin estrés y satisfactoria. Como empresa, estamos comprometidos con la sostenibilidad y la responsabilidad social, y queremos inspirar a otros a unirse a nosotros en la creación de un futuro más consciente y justo para todos.</p>
+            </div>
+        </section>
+        <section id="iconos">
+            <div id="contenido-iconos">
+                <div>
+                    <img src="/imagenes/productoindex1.png" alt="">
+                        <h6>Laminas de PEBD Y PEAD</h6>
+                        <p>Las Laminas de PEBD Y PEAD, hechas de polietileno que pueden ser utilizadas principalmente para el embalaje de distinto objetos como botellas, maletas, etc.
+                        </p>
+                </div>
+                <div>
+                    <img src="/imagenes/productoindex3.png" alt="">
+                        <h6>Carton y Papel Industrial</h6>
+                        <p>El cartón corrugado o cartón ondulado se fabrica a partir de papel fabricado con fibras de celulosa virgen o reciclada.</p>
+                </div>
+                <div>
+                    <img src="/imagenes/productoindex2.png" alt="">
+                        <h6>Bolsa de Polietileno</h6>
+                        <p>Las Bolsas de Polietileno y de Polipropileno son un tipo de Bolsa muy utilizada para el envasado o guardado de diversos productos.</p>
+                </div>
+            </div>
+        </section>
+        <!--::::Pie de Pagina::::::-->
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <h2>Contáctenos</h2>
+                    <p>+51963671771</p>
+                    <p>Irma_Grande_SAC@Contact.com</p>
+                </div>
+                <div class="box">
+                    <h2>Nuestros Productos</h2>
+                    <p>Bolsas Plásticas</p>
+                    <p>Bobinas</p>
+                    <p>Láminas de alta densidad</p>
+                    <p>Láminas de polietileno</p>
+                </div>
+                <div class="box">
+                    <h2>Direccion</h2>
+                    <p>AV. CHACRA CERRO LOTE. 53 INT. 1 FND. CHACRA CERRO LIMA - LIMA - COMAS</p>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2022 <b>Plasticos Irma Grande S.A.C</b> - Todos los Derechos Reservados.</small>
+            </div>
+        </footer>
+    </body>
+</html>
+
+

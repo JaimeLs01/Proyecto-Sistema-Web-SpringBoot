@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Irma SAC</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <link rel="icon" href="icono.jpg"></link>       
+            <link rel="stylesheet" href="/css/styles.css"></link> 
+            <link rel="stylesheet" href="/css/style.css"></link>       
+    </head>
+    <body>
+        <header>
+            <h2 class="logo">Plasticos Irma Grande S.A.C.</h2>
+            <input type="checkbox" id="check">
+                <label for="check" class="mostrar-menu">
+                    &#8801
+                </label>
+                <nav class="menu">
+                    <a th:href="@{/usuario/welcome}">Inicio</a>
+                    <a th:href="@{/public/productos}">Catalogo</a>
+                    <a th:href="@{/usuario/VerCompras}">Ver compras</a>
+                    <a th:href="@{/usuario/nuevoGuia}">Propuesta Producto</a>
+                    <a th:if="${carrito>0}" th:href="@{/VerCarrito}">Ver Carrito</a>
+                    <!--                        <a th:href="@{/cambiarContrasena}">Cambiar Contraseña</a>-->
+                    <a th:href="@{/logout}">Cerrar Sesion</a>
+                    <label for="check" class="esconder-menu">
+                        &#215
+                    </label>
+                </nav>
+        </header>
+        <main>
+            <div class="container-img">
+                <img
+                    th:src="${producto.imagen}"
+                    alt="imagen-producto"
+                    />
+            </div>
+            <div class="container-info-product">
+                <div class="container-price">
+                    <span th:text="${producto.nombre  +'  S/.' + producto.precioUnitario}"></span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+                <form th:action = "@{/usuario/AnadirCompra}" method="post" style="margin-top:15px;">
+                    <div class="container-add-cart">
+
+                        <div class="container-quantity">
+                            <input type="number" name="cantidad" value="1" minlength="1" maxlength="2" 
+                                   onkeypress="return ((event.charCode >= 48 && event.charCode <= 57))" 
+                                   class="input-quantity" id="inputCantidad" required> 
+                                <div class="btn-increment-decrement">
+                                    <i class="fa-solid fa-chevron-up" id="increment"></i>
+                                    <i class="fa-solid fa-chevron-down" id="decrement"></i>
+                                </div>
+                        </div>
+                        <button type="submit" class="btn-add-to-cart">
+                            <i class="fa-solid fa-plus"></i>
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </form>
+
+                <div class="container-description">
+                    <div class="title-description">
+                        <h4>Descripción</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="text-description">
+                        <p th:text="${producto.descripcion}">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="container-additional-information">
+                    <div class="title-additional-information">
+                        <h4>Información adicional</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="text-additional-information hidden">
+                        <p>-----------</p>
+                    </div>
+                </div>
+
+                <div class="container-reviews">
+                    <div class="title-reviews">
+                        <h4>Reseñas</h4>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="text-reviews hidden">
+                        <p>-----------</p>
+                    </div>
+                </div>
+
+                <div class="container-social">
+                    <span>Compartir</span>
+                    <div class="container-buttons-social">
+                        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script
+            src="https://kit.fontawesome.com/81581fb069.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="css/index.js"></script>
+
+
+
+        <!--
+                <div class="w-100 position-relative" th:if="${producto.imagen!=null}">
+                    <div class="position-absolute w-100">
+                         <img th:src="${'productos/' + producto.imagen}" class="w-100" style="height: 55rem">  
+                    </div>
+                </div>
+                <div class="w-100 position-relative" th:if="${producto.imagen==null}">
+                    <div class="position-absolute w-100">
+                          <img src="restaurante/fondodefecto.jpg" class="w-100" style="height: 55rem"> 
+                    </div>
+                </div>
+                <div class="w-100 logo mt-5 position-relative" >
+                    <center>
+                         <img class="logo" src="logorestaurante.jpg">       
+                    </center>
+                </div>-->
+
+        <!--        <div class="container my-5 position-relative text-dark">
+                    <div class="row bg-secondary bg-opacity-50 p-3 position-relative">
+                        <div class="col-6 my-auto">
+                            <img class="card-img-top mt-3 img-rounded" alt="..." style="height:270px" th:src="${producto.imagen}">                           
+                        </div>
+                        <div class="col-1 mx-0 ps-4">
+                            <div class="vr h-100 text-white" style="width: 3px;"></div>
+                        </div>
+        
+                        <div class="col-5 pt-5 ps-0 pe-5">
+                            <h2 class="card-title text-uppercase" th:text="${producto.nombre}" ></h2>
+                            <hr class="border border-1 my-5">
+                                <div class="card-text px-3 mb-5">
+                                    <div class="mb-2 fs-5" style="height: 6rem;" th:text="${producto.descripcion}"></div>
+                                    <div class="text-end text-danger fs-2" th:text="${'S/.' + producto.precioUnitario}"></div>
+                                </div>
+                                <form th:action = "@{/AnadirCompra}" method="post">
+                                    <div class="row w-50 mx-auto">
+                                        <label for="inputCantidad" class="col col-form-label pe-0 fs-4">Cantidad:</label>
+                                        <div class="col">
+                                            <input type="number" name="cantidad" value="1" minlength="1" maxlength="2" 
+                                                   onkeypress="return ((event.charCode >= 48 && event.charCode <= 57))" 
+                                                   class="form-control" id="inputCantidad" style="width: 70px" required>                                
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4 mx-3">
+                                        <button type="submit" class="btn btn-success mx-2">
+                                            <div class="fs-3 pb-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                                    <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+                                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                                </svg>
+                                                Añadir a la compra   
+                                            </div>
+                                        </button>
+                                    </div>
+                                </form>
+                        </div>
+        
+                    </div>
+                </div>-->
+    </body>
+</html>

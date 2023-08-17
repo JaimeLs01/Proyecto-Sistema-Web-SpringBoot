@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lista Usuario</title>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/sweetalert2.css">
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="css/jquery-1.11.2.min.js"><\/script>');</script>
+        <script type="text/javascript" src="/css/material.min.js" ></script>
+        <script type="text/javascript" src="/css/sweetalert2.min.js" ></script>
+        <script type="text/javascript" src="/css/jquery.mCustomScrollbar.concat.min.js" ></script>
+        <script type="text/javascript" src="/css/main_1.js" ></script>
+        <script type="text/javascript" src="/css/main.js" ></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"></link>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.0/echarts.min.js"></script> 
+    </head>
+    <body>
+        <!-- navBar -->
+        <div class="full-width navBar">
+            <div class="full-width navBar-options">
+                <i class="zmdi zmdi-more-vert btn-menu" id="btn-menu"></i>	
+                <div class="mdl-tooltip" for="btn-menu">Menu</div>
+                <nav class="navBar-options-list">
+                    <ul class="list-unstyle">
+                        <li>
+                            <a style="color:white;" href="/logout">
+                                <i class="zmdi zmdi-power"></i>
+                            </a>
+                        </li>
+                        <li class="text-condensedLight noLink" ><small th:text="${usuarioNombre}"></small></li>
+                        <li class="noLink">
+                            <figure>
+                                <img src="/css/avatar-male.png" alt="Avatar" class="img-responsive">
+                            </figure>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- navLateral -->
+        <section class="full-width navLateral">
+            <div class="full-width navLateral-bg btn-menu"></div>
+            <div class="full-width navLateral-body">
+                <div class="full-width navLateral-body-logo text-center tittles">
+                    <i class="zmdi zmdi-close btn-menu"></i> Usuarios 
+                </div>
+                <figure class="full-width" style="height: 77px;">
+                    <div class="navLateral-body-cl">
+                        <img src="/css/avatar-male.png" alt="Avatar" class="img-responsive">
+                    </div>
+                    <figcaption class="navLateral-body-cr hide-on-tablet">
+                        <span>
+                            Jaime Leon<br>
+                            <small>Admin</small>
+                        </span>
+                    </figcaption>
+                </figure>
+                <div class="full-width tittles navLateral-body-tittle-menu">
+                    <i class="zmdi zmdi-desktop-mac"></i><span class="hide-on-tablet">&nbsp; DASHBOARD</span>
+                </div>
+                <nav class="full-width">
+                    <ul class="full-width list-unstyle menu-principal">
+                        <li class="full-width">
+                            <a href="graficos" class="full-width">
+                                <div class="navLateral-body-cl">
+                                    <i class="zmdi zmdi-view-dashboard"></i>
+                                </div>
+                                <div class="navLateral-body-cr hide-on-tablet">
+                                    HOME
+                                </div>
+                            </a>
+                        </li>
+                        <li class="full-width divider-menu-h"></li>
+                        <li class="full-width">
+                            <a href="listarUsuarios" class="full-width">
+                                <div class="navLateral-body-cl">
+                                    <i class="zmdi zmdi-washing-machine"></i>
+                                </div>
+                                <div class="navLateral-body-cr hide-on-tablet">
+                                    Usuarios
+                                </div>
+                            </a>
+                        </li>
+                        <li class="full-width divider-menu-h"></li>
+                        <li class="full-width">
+                            <a href="listProducto" class="full-width btn-subMenu">
+                                <div class="navLateral-body-cl">
+                                    <i class="zmdi zmdi-wrench"></i>
+                                </div>
+                                <div class="navLateral-body-cr hide-on-tablet">
+                                    Productos
+                                </div>
+                            </a>
+                        </li>
+                        <li class="full-width divider-menu-h"></li>
+                        <li class="full-width">
+                            <a href="VerVentas" class="full-width">
+                                <div class="navLateral-body-cl">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                </div>
+                                <div class="navLateral-body-cr hide-on-tablet">
+                                    Ventas
+                                </div>
+                            </a>
+                        </li>
+                        <li class="full-width divider-menu-h"></li>
+                        <li class="full-width">
+                            <a href="kardex" class="full-width">
+                                <div class="navLateral-body-cl">
+                                    <i class="zmdi zmdi-store"></i>
+                                </div>
+                                <div class="navLateral-body-cr hide-on-tablet">
+                                    Kardex
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <!-- pageContent -->
+        <section class="full-width pageContent">
+            <section class="full-width header-well">
+                <div class="full-width header-well-icon">
+                    <i class="zmdi zmdi-store"></i>
+                </div>
+                <div class="full-width header-well-text">
+                    <p class="text-condensedLight">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+                    </p>
+                </div>
+            </section>
+            <div class="full-width divider-menu-h"></div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+                        <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">ID</th>
+                                <th>NOMBRE</th>
+                                <th>DIRECCION</th>
+                                <th>CORREO</th>
+                                <th>TELEFONO</th>
+                                <th>DISTRITO</th>
+                                <th>ESTADO</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="st : ${listaUsuarios}">
+                                <td class="mdl-data-table__cell--non-numeric" th:text="${st.id}"></td>
+                                <td th:text="${st.nombre}"></td>
+                                <td th:text="${st.direccion}"></td>
+                                <td th:text="${st.correo}"></td>
+                                <td th:text="${st.telefono}"></td>
+                                <td th:text="${st.id_distrito.nombre_distrito}"></td>
+                                <td th:switch="${st.estado}">
+                                    <span style="color: red" th:case="'1'">Inactivo</span>
+                                    <span style="color: green" th:case="*">Activo</span>
+                                </td>
+                                <td>
+                                    <a th:href="@{'usuarioAct?id='+${st.id}}" class="bi bi-person-x-fill" id="icons">Actualizar</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

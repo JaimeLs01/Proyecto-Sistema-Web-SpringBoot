@@ -1,0 +1,219 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Irma SAC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script><!-- comment -->
+        <link rel="shortcut icon" href="https://lh3.googleusercontent.com/a-/AOh14Ghc485CzSKimbXTXjdKvjou7PfY-xunxAibTWF8=w60-h60-p-rp-mo-br100" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" th:href="@{/css/style.css}"/>
+        <link rel="stylesheet" th:href="@{/css/imagenes/**}"/> 
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!--
+         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        -->
+    </head>
+    <body>
+        <header>
+            <h2 class="logo">Plasticos Irma Grande S.A.C.</h2>
+            <input type="checkbox" id="check">
+            <label for="check" class="mostrar-menu">
+                &#8801
+            </label>
+            <nav class="menu">
+                <a th:href="@{/public/index}">Inicio</a>
+                <a th:href="@{/public/productos}">Catalogo</a>
+                <a th:href="@{/public/nuevoUsuario}">Registrar</a>
+                <a th:href="@{/public/login}">Iniciar Sesion</a>
+                <label for="check" class="esconder-menu">
+                    &#215
+                </label>
+            </nav>
+        </header>
+        <section id="banner">
+            <div class="contenido-banner">
+                <h3><span>Plasticos Irma Grande S.A.C.</span><br>Fabricacion y comercialización de productos plásticos</h3>
+                <a href="#" class="boton-empezar">Ver Catalogo</a>
+            </div>
+        </section>
+        <section id="personas">
+            <div>
+                <img src="/imagenes/mision1.png" alt="">
+                <h4>Mision</h4>
+                <p> En nuestra tienda de ropa, nuestra misión es ofrecer a nuestros clientes una selección de prendas de vestir de alta calidad a precios asequibles. Nos esforzamos por ofrecer un servicio excepcional y ayudar a cada cliente a encontrar su estilo único. Creemos que la moda es una forma de expresión personal, y estamos comprometidos a brindar a nuestros clientes la oportunidad de expresarse con confianza.</p>
+            </div>
+            <div>
+                <img src="/imagenes/vision.png" alt="">
+                <h4>Vision</h4>
+                <p> Nuestra visión es ser la tienda de ropa líder en nuestra comunidad y en línea, reconocida por nuestro servicio excepcional y nuestra selección de prendas de vestir de alta calidad. Queremos ser conocidos como el destino de moda preferido para hombres y mujeres de todas las edades y tamaños, ofreciendo una experiencia de compra sin estrés y satisfactoria. Como empresa, estamos comprometidos con la sostenibilidad y la responsabilidad social, y queremos inspirar a otros a unirse a nosotros en la creación de un futuro más consciente y justo para todos.</p>
+            </div>
+            
+        </section>
+        <section id="iconos">
+            <div id="contenido-iconos">
+                <div>
+                    <img src="/imagenes/productoindex1.png" alt="">
+                    <h6>Laminas de PEBD Y PEAD</h6>
+                    <p>Las Laminas de PEBD Y PEAD, hechas de polietileno que pueden ser utilizadas principalmente para el embalaje de distinto objetos como botellas, maletas, etc.
+                    </p>
+                </div>
+                <div>
+                    <img src="/imagenes/productoindex3.png" alt="">
+                    <h6>Carton y Papel Industrial</h6>
+                    <p>El cartón corrugado o cartón ondulado se fabrica a partir de papel fabricado con fibras de celulosa virgen o reciclada.</p>
+                </div>
+                <div>
+                    <img src="/imagenes/productoindex2.png" alt="">
+                    <h6>Bolsa de Polietileno</h6>
+                    <p>Las Bolsas de Polietileno y de Polipropileno son un tipo de Bolsa muy utilizada para el envasado o guardado de diversos productos.</p>
+                </div>
+            </div>
+        </section>
+<!--        <section id="mapa">
+        <div>
+            <h4>Ubicacion</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15615.216745737684!2d-77.0630702!3d-11.9187115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x56b0aea37e04a5ed!2sPlasticos%20Irma%20Grande%20S.A.C!5e0!3m2!1ses-419!2spe!4v1651963020060!5m2!1ses-419!2spe" class="Mapa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        </section>-->
+        <!--::::Pie de Pagina::::::-->
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <h2>Contáctenos</h2>
+                    <p>+51963671771</p>
+                    <p>Irma_Grande_SAC@Contact.com</p>
+                </div>
+                <div class="box">
+                    <h2>Nuestros Productos</h2>
+                    <p>Bolsas Plásticas</p>
+                    <p>Bobinas</p>
+                    <p>Láminas de alta densidad</p>
+                    <p>Láminas de polietileno</p>
+                </div>
+                <div class="box">
+                    <h2>Direccion</h2>
+                        <p>AV. CHACRA CERRO LOTE. 53 INT. 1 FND. CHACRA CERRO LIMA - LIMA - COMAS</p>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2022 <b>Plasticos Irma Grande S.A.C</b> - Todos los Derechos Reservados.</small>
+            </div>
+        </footer>
+    </body>
+</html>
+<!--        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="Navegacion">
+
+            <img src="https://i.imgur.com/KAJB9lZ.png" class="Logo">
+            <a class="navbar-brand" id="Ancord">Plasticos Irma Grandeee S.A.C.</a>
+            <div class="collapse navbar-collapse" id="miNavbar">
+                <ul class="navbar-nav mr-auto" id="Container-Navegacion">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index">Inicio</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="welcome">Ingresar</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="nuevoUsuario">Registrar</a>
+                    </li>
+                   
+                    
+                </ul>
+            </div>
+        </nav>    -->
+<!--        <div class="container Container-Carousel">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                 Indicators/dots 
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class=""></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2" class=""></button>
+                </div>
+                <br>
+                 The slideshow/carousel 
+                <div class="carousel-inner rounded" id="Container-Carousel">
+                    <div class="carousel-item active">
+                        <img src="https://plastijet.com/wp-content/uploads/2016/05/empresa1.jpg" width="100px" height="50px" alt="Chocolates" class="w-100 h-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://exponavesyparquesindustriales.com/wp-content/uploads/2017/12/importancia-del-plastico-1080x675.jpg" alt="Torta" class="w-100 h-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/semana/NLYGCCFLCBDQJLSJAXVKKO2IIQ.jpg" alt="Torta2" class="w-100 h-100">
+                    </div>
+                </div>
+                 Left and right controls/icons 
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>-->
+<!--        <section id="banner">
+            <div class="contenido-banner">
+                <h3><span>Plasticos Irma Grande S.A.C.</span><br>Fabricacion y comercialización de productos plásticos</h3>
+                <a href="#" class="boton-empezar">Ver Catalogo</a>
+            </div>
+        </section>
+        <p></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-12 Nosotros rounded ">Bg-primary
+                    <p style="color: black">
+                        Contamos con más de 10 años de experiencia en el rubro.
+                        <br>
+                        Personal altamente capacitado en la producción y comercialización, cumpliendo con los estandares de producción
+                    </p>
+                </div>
+                <div class="col-sm-6 col-12 container-photo-portada">
+                    <img class="photo-portada img-fluid" src="https://www.argentina.gob.ar/sites/default/files/fotor_151147816741246.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    <center><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15615.216745737684!2d-77.0630702!3d-11.9187115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x56b0aea37e04a5ed!2sPlasticos%20Irma%20Grande%20S.A.C!5e0!3m2!1ses-419!2spe!4v1651963020060!5m2!1ses-419!2spe" class="Mapa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>   
+    <br> <br> <br>
+    <footer>
+        <div class="content">
+            <div class="left box">
+                <div class="upper">
+                    <div class="topic">Sobre Nosotros</div>
+                    <p>Plásticos Irma Grande S.A.C. es una fabrica dedicada a la fabricación y comercialización de productos plásticos de primera calidad a nivel nacional.</p>
+                </div>
+                <div class="lower">
+                    <div class="topic">Contáctenos</div>
+                    <div class="phone">
+                        <a class="none" href="#"><i class="fas fa-phone-volume"></i>+51963671771</a>
+                    </div>
+                    <div class="email">
+                        <a class="none" href="#"><i class="fas fa-envelope"></i>Irma_Grande_SAC@Contact.com</a>
+                    </div>
+                    <div class="country">
+                        <a class="none" href="#"><i class="fas fa-country"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="middle box">
+                <div class="topic">Nuestros Servicios</div>
+                <div><a class="none" href="#">Bolsas Plásticas</a></div>
+                <div><a class="none" href="#">Bobinas</a></div>
+                <div><a class="none" href="#">Láminas de polietileno</a></div>
+                <div><a class="none" href="#">Láminas de alta densidad</a></div>
+                <div><a class="none" href="#">Láminas de baja densidad</a></div>
+            </div>
+            <div class="right box">
+                <div class="topic">Direccion</div>
+                <div><a class="none" href="#">AV. CHACRA CERRO LOTE. 53 INT. 1 FND. CHACRA CERRO LIMA - LIMA - COMAS</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <p>Copyright © 2022 <a href="#">Irma Grande SAC</a> Todos los derechos reservados</p>
+    </div>
+</footer> -->
+
+

@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Irma SAC</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/css/style.css"/>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body style="background-color: var(--azulOscuro);">
+        <header>
+            <h2 class="logo">Plasticos Irma Grande S.A.C.</h2>
+            <input type="checkbox" id="check"></input>
+            <label for="check" class="mostrar-menu">
+                &#8801
+            </label>
+            <nav class="menu">
+                <a th:href="@{/usuario/welcome}">Inicio</a>
+                <a th:href="@{/public/productos}">Catalogo</a>
+                <a th:href="@{/usuario/VerCompras}">Ver compras</a>
+                <a th:href="@{/usuario/nuevoGuia}">Propuesta Producto</a>
+                <a th:if="${carrito>0}" th:href="@{/VerCarrito}">Ver Carrito</a>
+                <!--                        <a th:href="@{/cambiarContrasena}">Cambiar Contraseña</a>-->
+                <a th:href="@{/logout}">Cerrar Sesion</a>
+                <label for="check" class="esconder-menu">
+                    &#215
+                </label>
+            </nav>
+        </header>
+        <div class="contenedor-formulario contenedor">
+            <div class="imagen-formulario">
+
+            </div>
+
+            <form class="formulario" method="POST" th:action="@{'/administrador/productosUdp?id='+${producto}}">
+                <div class="texto-formulario">
+                    <h2>Modificar Stock del producto</h2>
+                </div>    
+                <div class="input">
+                    <label for="usuario">Cuanto Stock desea agregar</label>
+                    <input type="text" name="cantidad"/>
+                </div>
+                <div class="input">
+                    <input type="submit" value="Actualizar">
+                </div>
+            </form>
+        </div>
+
+
+    </body>
+
+
+</html>

@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Irma SAC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script><!-- comment -->
+        <link rel="shortcut icon" href="https://lh3.googleusercontent.com/a-/AOh14Ghc485CzSKimbXTXjdKvjou7PfY-xunxAibTWF8=w60-h60-p-rp-mo-br100" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" th:href="@{/css/style.css}"/>
+        <link rel="stylesheet" th:href="@{/css/imagenes/**}"/> 
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!--
+         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        -->
+    </head>
+    <body>
+        <header>
+            <h2 class="logo">Plasticos Irma Grande S.A.C.</h2>
+            <input type="checkbox" id="check">
+            <label for="check" class="mostrar-menu">
+                &#8801
+            </label>
+            <nav class="menu">
+                        <a th:href="@{/usuario/welcome}">Inicio</a>
+                        <a th:href="@{/public/productos}">Catalogo</a>
+                        <a th:href="@{/usuario/VerCompras}">Ver compras</a>
+                        <a th:href="@{/usuario/nuevoGuia}">Propuesta Producto</a>
+                        <a th:if="${carrito>0}" th:href="@{/VerCarrito}">Ver Carrito</a>
+<!--                        <a th:href="@{/cambiarContrasena}">Cambiar Contraseña</a>-->
+                        <a th:href="@{/logout}">Cerrar Sesion</a>
+                        <label for="check" class="esconder-menu">
+                            &#215
+                        </label>
+                </nav>
+        </header>
+        <section id="banner">
+            <div class="contenido-banner">
+                <h3><span>Plasticos Irma Grande S.A.C.</span><br>Fabricacion y comercialización de productos plásticos</h3>
+                <a href="#" class="boton-empezar">Ver Catalogo</a>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div th:each="st : ${listaProducto}" class="card col-sm-4 justify-content-center" style=" text-align: center; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);width:400px; float: left; margin: 10px">
+
+                <img class="card-img-top mt-3 img-rounded" alt="..." th:if="${st.imagen}!=null" th:src="${st.imagen}" style="height:418px;width:403px;" >
+                <img class="card-img-top mt-3 img-rounded" alt="..." th:if="${st.imagen}==null" src="https://cdn-icons-png.flaticon.com/512/166/166913.png" style="height:270px" >
+                    <div class="card-body">
+                    <p style="font-weight: bold;  margin-bottom: 0;color:red">PRODUCTO</p>
+                    <p th:text="${st.nombre}" style="font-weight: bold;  margin-bottom: 0;"></p>
+                    <p style="font-weight: bold;  margin-bottom: 0;color:red">DESCRIPCION</p>
+                    <p th:text="${st.descripcion}" style="font-weight: bold;  margin-bottom: 0;"></p>
+                    <p style="font-weight: bold;  margin-bottom: 0;color:red">Precio</p>
+                    <p th:text="${st.precioUnitario}" style="font-weight: bold;  margin-bottom: 0;"></p>
+                    <a class="btn btn-success" th:href="@{/usuario/VenderProducto(codigo=${st.productoId})}">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <h2>Contáctenos</h2>
+                    <p>+51963671771</p>
+                    <p>Irma_Grande_SAC@Contact.com</p>
+                </div>
+                <div class="box">
+                    <h2>Nuestros Productos</h2>
+                    <p>Bolsas Plásticas</p>
+                    <p>Bobinas</p>
+                    <p>Láminas de alta densidad</p>
+                    <p>Láminas de polietileno</p>
+                </div>
+                <div class="box">
+                    <h2>Direccion</h2>
+                        <p>AV. CHACRA CERRO LOTE. 53 INT. 1 FND. CHACRA CERRO LIMA - LIMA - COMAS</p>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2022 <b>Plasticos Irma Grande S.A.C</b> - Todos los Derechos Reservados.</small>
+            </div>
+        </footer>
+    </body>
+</html>
+
+                       
+                                        
